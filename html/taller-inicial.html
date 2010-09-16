@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.6: http://docutils.sourceforge.net/" />
+<title>Taller Inicial Open Journal System</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 5951 2009-05-18 18:03:10Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left{
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: left }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="taller-inicial-open-journal-system">
+<h1 class="title">Taller Inicial Open Journal System</h1>
+
+<div class="contents topic" id="tabla-de-contenido">
+<p class="topic-title first">Tabla de contenido</p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#introduccion-a-ojs" id="id1">1&nbsp;&nbsp;&nbsp;Introducción a OJS</a><ul class="auto-toc">
+<li><a class="reference internal" href="#sobre-open-journal-system" id="id2">1.1&nbsp;&nbsp;&nbsp;Sobre Open Journal System</a></li>
+<li><a class="reference internal" href="#caracteristicas-de-ojs" id="id3">1.2&nbsp;&nbsp;&nbsp;Características de OJS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#preliminares" id="id4">2&nbsp;&nbsp;&nbsp;Preliminares</a><ul class="auto-toc">
+<li><a class="reference internal" href="#navegando-por-ojs" id="id5">2.1&nbsp;&nbsp;&nbsp;Navegando por OJS</a><ul class="auto-toc">
+<li><a class="reference internal" href="#elementos-comunes-en-la-interfaz" id="id6">2.1.1&nbsp;&nbsp;&nbsp;Elementos comunes en la interfaz</a></li>
+<li><a class="reference internal" href="#elementos-especificos-de-la-interfaz-de-revistas" id="id7">2.1.2&nbsp;&nbsp;&nbsp;Elementos específicos de la interfaz de revistas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usuarios-y-roles" id="id8">2.2&nbsp;&nbsp;&nbsp;Usuarios y Roles</a><ul class="auto-toc">
+<li><a class="reference internal" href="#acerca-de-los-roles-de-usuario" id="id9">2.2.1&nbsp;&nbsp;&nbsp;Acerca de los Roles de Usuario</a></li>
+<li><a class="reference internal" href="#roles-disponibles-en-ojs" id="id10">2.2.2&nbsp;&nbsp;&nbsp;Roles disponibles en OJS</a></li>
+<li><a class="reference internal" href="#registrandose-en-una-revista" id="id11">2.2.3&nbsp;&nbsp;&nbsp;Registrandose en una Revista</a></li>
+<li><a class="reference internal" href="#viendo-y-cambiando-su-perfil" id="id12">2.2.4&nbsp;&nbsp;&nbsp;Viendo y Cambiando su Perfil</a></li>
+<li><a class="reference internal" href="#reseteando-su-contrasena" id="id13">2.2.5&nbsp;&nbsp;&nbsp;Reseteando su Contraseña</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuraciones-y-gestion-para-una-revista" id="id14">3&nbsp;&nbsp;&nbsp;Configuraciones y Gestión para una revista</a><ul class="auto-toc">
+<li><a class="reference internal" href="#resumen" id="id15">3.1&nbsp;&nbsp;&nbsp;Resumen</a></li>
+<li><a class="reference internal" href="#gestion-de-sitio" id="id16">3.2&nbsp;&nbsp;&nbsp;Gestión de Sitio</a><ul class="auto-toc">
+<li><a class="reference internal" href="#configuraciones-del-sitio" id="id17">3.2.1&nbsp;&nbsp;&nbsp;Configuraciones del Sitio</a></li>
+<li><a class="reference internal" href="#revistas-albergadas" id="id18">3.2.2&nbsp;&nbsp;&nbsp;Revistas Albergadas</a></li>
+<li><a class="reference internal" href="#configuraciones-de-idiomas" id="id19">3.2.3&nbsp;&nbsp;&nbsp;Configuraciones de Idiomas</a></li>
+<li><a class="reference internal" href="#funciones-administrativas" id="id20">3.2.4&nbsp;&nbsp;&nbsp;Funciones Administrativas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gestion-de-revista" id="id21">3.3&nbsp;&nbsp;&nbsp;Gestión de Revista</a><ul class="auto-toc">
+<li><a class="reference internal" href="#el-proceso-de-configuracion-de-5-pasos" id="id22">3.3.1&nbsp;&nbsp;&nbsp;El Proceso de Configuración de 5 Pasos</a></li>
+<li><a class="reference internal" href="#anuncios" id="id23">3.3.2&nbsp;&nbsp;&nbsp;Anuncios</a></li>
+<li><a class="reference internal" href="#el-explorador-de-documentos" id="id24">3.3.3&nbsp;&nbsp;&nbsp;El Explorador de Documentos</a></li>
+<li><a class="reference internal" href="#secciones-de-una-revista" id="id25">3.3.4&nbsp;&nbsp;&nbsp;Secciones de una Revista</a></li>
+<li><a class="reference internal" href="#formularios-de-revision" id="id26">3.3.5&nbsp;&nbsp;&nbsp;Formularios de Revisión</a></li>
+<li><a class="reference internal" href="#idiomas" id="id27">3.3.6&nbsp;&nbsp;&nbsp;Idiomas</a></li>
+<li><a class="reference internal" href="#equipo-de-trabajo" id="id28">3.3.7&nbsp;&nbsp;&nbsp;Equipo de Trabajo</a></li>
+<li><a class="reference internal" href="#plantillas-de-correo-electronico" id="id29">3.3.8&nbsp;&nbsp;&nbsp;Plantillas de correo electrónico</a></li>
+<li><a class="reference internal" href="#herramientas-de-lectura" id="id30">3.3.9&nbsp;&nbsp;&nbsp;Herramientas de Lectura</a></li>
+<li><a class="reference internal" href="#reportes-y-estadisticas" id="id31">3.3.10&nbsp;&nbsp;&nbsp;Reportes y Estadísticas</a></li>
+<li><a class="reference internal" href="#suscripciones" id="id32">3.3.11&nbsp;&nbsp;&nbsp;Suscripciones</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gestion-de-usuarios" id="id33">3.4&nbsp;&nbsp;&nbsp;Gestión de Usuarios</a><ul class="auto-toc">
+<li><a class="reference internal" href="#enviar-correo-electronico-a-usuarios" id="id34">3.4.1&nbsp;&nbsp;&nbsp;Enviar correo electrónico a usuarios</a></li>
+<li><a class="reference internal" href="#inscribir-usuarios-existentes" id="id35">3.4.2&nbsp;&nbsp;&nbsp;Inscribir Usuarios Existentes</a></li>
+<li><a class="reference internal" href="#mostrar-usuarios-sin-rol" id="id36">3.4.3&nbsp;&nbsp;&nbsp;Mostrar Usuarios sin Rol</a></li>
+<li><a class="reference internal" href="#crear-usuarios" id="id37">3.4.4&nbsp;&nbsp;&nbsp;Crear Usuarios</a></li>
+<li><a class="reference internal" href="#unir-usuarios" id="id38">3.4.5&nbsp;&nbsp;&nbsp;Unir Usuarios</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#proceso-de-edicion-y-publicacion" id="id39">4&nbsp;&nbsp;&nbsp;Proceso de Edición y Publicación</a><ul class="auto-toc">
+<li><a class="reference internal" href="#autoras-es" id="id40">4.1&nbsp;&nbsp;&nbsp;Autoras/es</a></li>
+<li><a class="reference internal" href="#editoras-es" id="id41">4.2&nbsp;&nbsp;&nbsp;Editoras/es</a></li>
+<li><a class="reference internal" href="#editoras-es-de-seccion" id="id42">4.3&nbsp;&nbsp;&nbsp;Editoras/es de Sección</a></li>
+<li><a class="reference internal" href="#revisoras-es" id="id43">4.4&nbsp;&nbsp;&nbsp;Revisoras/es</a></li>
+<li><a class="reference internal" href="#correctoras-es" id="id44">4.5&nbsp;&nbsp;&nbsp;Correctoras/es</a></li>
+<li><a class="reference internal" href="#editoras-es-de-maquetacion" id="id45">4.6&nbsp;&nbsp;&nbsp;Editoras/es de Maquetación</a></li>
+<li><a class="reference internal" href="#correctoras-es-de-pruebas" id="id46">4.7&nbsp;&nbsp;&nbsp;Correctoras/es de Pruebas</a></li>
+<li><a class="reference internal" href="#lectoras-es" id="id47">4.8&nbsp;&nbsp;&nbsp;Lectoras/es</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduccion-a-ojs">
+<h1><a class="toc-backref" href="#id1">1&nbsp;&nbsp;&nbsp;Introducción a OJS</a></h1>
+<div class="section" id="sobre-open-journal-system">
+<h2><a class="toc-backref" href="#id2">1.1&nbsp;&nbsp;&nbsp;Sobre Open Journal System</a></h2>
+<p>Open Journal Systems (OJS) es una solución de código abierto para la gestión
+y publicación de revistas académicas en línea. Se trata de un sistema de
+gestión y publicación muy flexible y operado por los mismos editores que se
+puede descargar de forma gratuita y se instala en un servidor web local.</p>
+<p>Ha sido diseñado para reducir el tiempo y la energía dedicada a las tareas
+administrativas y de gestión asociadas con la edición de una revista, al
+tiempo que mejora la eficiencia de registros y de los procesos editoriales.</p>
+<p>Su objetivo es mejorar la calidad académica y pública de la difusión de
+revistas a través de una serie de innovaciones, desde la elaboración de
+políticas de revista más transparentes hasta mejorar la indexación de los
+contenidos.</p>
+</div>
+<div class="section" id="caracteristicas-de-ojs">
+<h2><a class="toc-backref" href="#id3">1.2&nbsp;&nbsp;&nbsp;Características de OJS</a></h2>
+<p>OJS incluye las siguientes características:</p>
+<ol class="arabic simple">
+<li>Es instalado y controlado en forma local</li>
+<li>Los editores configuran los requerimientos, secciones, proceso de
+revisión, etc.</li>
+<li>Envío de artículos, revisión por pares y gestión de todo el
+contenido on-line.</li>
+<li>Módulo de suscripción con opciones de acceso libre/no libre</li>
+<li>Indexación exahustiva de contenido</li>
+<li>Herramientas de lectura basadas en preferencias del editor</li>
+<li>Posibilidad de enviar notificaciones y comentarios vía email para los
+lectores</li>
+<li>Ayuda completa on-line sensible al conexto</li>
+<li>Módulo de Pagos para aceptar remuneraciones, donaciones, etc.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="preliminares">
+<h1><a class="toc-backref" href="#id4">2&nbsp;&nbsp;&nbsp;Preliminares</a></h1>
+<div class="section" id="navegando-por-ojs">
+<h2><a class="toc-backref" href="#id5">2.1&nbsp;&nbsp;&nbsp;Navegando por OJS</a></h2>
+<p>Open Journal System ha sido diseñado como un sistema multi-revista el cual
+permite mantener cualquier cantidad de revistas en una sola instalación.
+Desde la página inicial los visitantes tienen acceso a páginas globales
+del sitio y pueden navegar por cualquiera de las páginas que pertenezcan
+a una revista específica albergada en el sitio.</p>
+<p>(imagen de sitio multi-revista)</p>
+<p>El sistema también puede configurarse para redireccionar a los visitantes
+a una revista específica, lo cual es útil si el sitio alberga una sola
+revista.</p>
+<p>(imagen de sitio una revista)</p>
+<div class="section" id="elementos-comunes-en-la-interfaz">
+<h3><a class="toc-backref" href="#id6">2.1.1&nbsp;&nbsp;&nbsp;Elementos comunes en la interfaz</a></h3>
+<p>Encontrará algunos elementos de interfaz comunes a nivel de Sitio y nivel de
+Revista en cualquier instalación por defecto del sistema OJS.</p>
+<blockquote>
+<ul>
+<li><p class="first">Barra de Navegación Superior</p>
+<p>La barra de navegación que se encuentra más arriba en la página incluye
+enlaces al Inicio, Acerca de..., Login, Registro y Buscar. Si ya ha iniciado
+sesión los enlaces Login y Registro son reemplazados por el enlace Área Personal.</p>
+<p>(imagenes de barra de navegación, ambas)</p>
+<p>(explicar brevemente cada uno de los enlaces)</p>
+</li>
+<li><p class="first">Rastro de navegación</p>
+<p>Directamente bajo la barra de navegación superior encontrará un rastro de
+la navegación actual con una serie de enlaces, uno por la página inicial
+del sitio, y uno por cada sub-página a la que haya navegado, terminando en
+la página en la que se encuentra cuyo enlace se encuentra resaltado en
+negrita. Cada enlace lo llevará de vuelta a esa sub-página específica.</p>
+<p>(imagen breadcrumb)</p>
+</li>
+<li><p class="first">Barra Lateral</p>
+<p>La barra lateral que encontramos a la derecha en realidad consiste en
+&quot;bloques&quot;, los cuales se describen a continuación.</p>
+<p>(imagen barra lateral)</p>
+<ul class="simple">
+<li>El bloque &quot;Desarrollado por&quot; en la parte superior provee un enlace al
+sitio web de Public Knowledge Project.</li>
+<li>El bloque &quot;Ayuda de la Revista&quot; provee un enlace a la ayuda sensible al
+contexto del sistema. No importa donde se encuentre en el sistema, puede
+dar click en este enlace para acceder a ayuda específica de la sección
+actual.</li>
+<li>El bloque de &quot;Usuario&quot; provee informaciones y opciones útiles específicas
+para el usuario. Si no ha iniciado sesión, pued ingresar su nombre de
+usuario y contraseña para ingresar al sistema. Si ya ha iniciado sesión,
+el bloque despliega su nombre de usuario y provee enlaces a las revistas
+en que se ha registrado, un enlace a su perfil y otro más para cerrar su
+sesión.</li>
+<li>El bloque de &quot;Idioma&quot; sólo aparece si más de un idioma ha sido instalado
+en el sistema para la revista en particular en la que está navegando.
+Puede intercambiar de idioma eligiendo el idioma de su agrado de la lista
+de selección.</li>
+<li>El bloque &quot;Contenido de la revista&quot; le permite buscar contenidos en la
+revista. Puede buscar en todos los campos o puede elegir uno en
+particular (por ejemplo el campo autor). Si está navegando a nivel de
+sitio puede buscar en todas las revistas que alberga el mismo, y si está
+navegando una revista específica sólo podrá buscar dentro de ella.</li>
+<li>El bloque &quot;Tamaño de fuente&quot; le permite aumentar o disminuir el tamaño
+de la fuente en todo el sitio web.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="elementos-especificos-de-la-interfaz-de-revistas">
+<h3><a class="toc-backref" href="#id7">2.1.2&nbsp;&nbsp;&nbsp;Elementos específicos de la interfaz de revistas</a></h3>
+<p>Encontrará algunos elementos de interfaz que sólo se ven cuando se navega
+a nivel revista.</p>
+<blockquote>
+<ul>
+<li><p class="first">Barra de Navegación Superior Específica de Revista</p>
+<p>Al navegar a nivel de revista, la barra de navegación que se encuentra
+más arriba incluye dos enlaces extra por defecto:</p>
+<p>(imagen top navigation bar journal level)</p>
+<ul class="simple">
+<li>El enlace &quot;Actual&quot; lo lleva a la tabla de contenidos de la edición
+actual. Si la revista no tiene actualmente algún material publicado,
+verá una página que le indicará esto.</li>
+<li>El enlace &quot;Archivos&quot; lo lleva a un listado de todas las ediciones
+publicadas, incluída la publicación más reciente. También podrá
+visitar la tabla de contenido de cada edición mediante un click
+en el título de la misma.</li>
+</ul>
+</li>
+<li><p class="first">Elmentos Específicos de Revista en la Barra Lateral</p>
+<p>Notará algunos bloques nuevos al navegar a nivel revista:</p>
+<p>(imagen journal's sidebar)</p>
+<ul class="simple">
+<li>El bloque de &quot;Notificaciones&quot; que le permite manipular y ver las
+notificaciones específicas de la revista.</li>
+<li>El bloque de &quot;Suscripción&quot;, que sólo aparecerá en las revistas que
+permitan suscripciones, y mostrará información relativa a la cuenta
+del usuario.</li>
+<li>El bloque &quot;Navegar&quot; permite examinar los contenidos de la revista
+por listas. Puede navegar por Edición, por Autor y por Título.
+Adicionalmente, si se hace click en el enlace  &quot;Otras revistas&quot;
+será dirigido a la lista de revistas a nivel de sitio.</li>
+<li>El bloque de &quot;Información&quot; despliega los enlaces &quot;Para lectoras/es&quot;,
+&quot;Para Autoras/es&quot; y &quot;Para bibliotecarias/os&quot;. El contenido de estas
+páginas se agrega al configurar una revista. Si el contenido es
+eliminado, estos enlaces desaparecerán automáticamente.</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="usuarios-y-roles">
+<h2><a class="toc-backref" href="#id8">2.2&nbsp;&nbsp;&nbsp;Usuarios y Roles</a></h2>
+<div class="section" id="acerca-de-los-roles-de-usuario">
+<h3><a class="toc-backref" href="#id9">2.2.1&nbsp;&nbsp;&nbsp;Acerca de los Roles de Usuario</a></h3>
+</div>
+<div class="section" id="roles-disponibles-en-ojs">
+<h3><a class="toc-backref" href="#id10">2.2.2&nbsp;&nbsp;&nbsp;Roles disponibles en OJS</a></h3>
+</div>
+<div class="section" id="registrandose-en-una-revista">
+<h3><a class="toc-backref" href="#id11">2.2.3&nbsp;&nbsp;&nbsp;Registrandose en una Revista</a></h3>
+</div>
+<div class="section" id="viendo-y-cambiando-su-perfil">
+<h3><a class="toc-backref" href="#id12">2.2.4&nbsp;&nbsp;&nbsp;Viendo y Cambiando su Perfil</a></h3>
+</div>
+<div class="section" id="reseteando-su-contrasena">
+<h3><a class="toc-backref" href="#id13">2.2.5&nbsp;&nbsp;&nbsp;Reseteando su Contraseña</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="configuraciones-y-gestion-para-una-revista">
+<h1><a class="toc-backref" href="#id14">3&nbsp;&nbsp;&nbsp;Configuraciones y Gestión para una revista</a></h1>
+<div class="section" id="resumen">
+<h2><a class="toc-backref" href="#id15">3.1&nbsp;&nbsp;&nbsp;Resumen</a></h2>
+</div>
+<div class="section" id="gestion-de-sitio">
+<h2><a class="toc-backref" href="#id16">3.2&nbsp;&nbsp;&nbsp;Gestión de Sitio</a></h2>
+<div class="section" id="configuraciones-del-sitio">
+<h3><a class="toc-backref" href="#id17">3.2.1&nbsp;&nbsp;&nbsp;Configuraciones del Sitio</a></h3>
+</div>
+<div class="section" id="revistas-albergadas">
+<h3><a class="toc-backref" href="#id18">3.2.2&nbsp;&nbsp;&nbsp;Revistas Albergadas</a></h3>
+</div>
+<div class="section" id="configuraciones-de-idiomas">
+<h3><a class="toc-backref" href="#id19">3.2.3&nbsp;&nbsp;&nbsp;Configuraciones de Idiomas</a></h3>
+</div>
+<div class="section" id="funciones-administrativas">
+<h3><a class="toc-backref" href="#id20">3.2.4&nbsp;&nbsp;&nbsp;Funciones Administrativas</a></h3>
+</div>
+</div>
+<div class="section" id="gestion-de-revista">
+<h2><a class="toc-backref" href="#id21">3.3&nbsp;&nbsp;&nbsp;Gestión de Revista</a></h2>
+<div class="section" id="el-proceso-de-configuracion-de-5-pasos">
+<h3><a class="toc-backref" href="#id22">3.3.1&nbsp;&nbsp;&nbsp;El Proceso de Configuración de 5 Pasos</a></h3>
+</div>
+<div class="section" id="anuncios">
+<h3><a class="toc-backref" href="#id23">3.3.2&nbsp;&nbsp;&nbsp;Anuncios</a></h3>
+</div>
+<div class="section" id="el-explorador-de-documentos">
+<h3><a class="toc-backref" href="#id24">3.3.3&nbsp;&nbsp;&nbsp;El Explorador de Documentos</a></h3>
+</div>
+<div class="section" id="secciones-de-una-revista">
+<h3><a class="toc-backref" href="#id25">3.3.4&nbsp;&nbsp;&nbsp;Secciones de una Revista</a></h3>
+</div>
+<div class="section" id="formularios-de-revision">
+<h3><a class="toc-backref" href="#id26">3.3.5&nbsp;&nbsp;&nbsp;Formularios de Revisión</a></h3>
+</div>
+<div class="section" id="idiomas">
+<h3><a class="toc-backref" href="#id27">3.3.6&nbsp;&nbsp;&nbsp;Idiomas</a></h3>
+</div>
+<div class="section" id="equipo-de-trabajo">
+<h3><a class="toc-backref" href="#id28">3.3.7&nbsp;&nbsp;&nbsp;Equipo de Trabajo</a></h3>
+</div>
+<div class="section" id="plantillas-de-correo-electronico">
+<h3><a class="toc-backref" href="#id29">3.3.8&nbsp;&nbsp;&nbsp;Plantillas de correo electrónico</a></h3>
+</div>
+<div class="section" id="herramientas-de-lectura">
+<h3><a class="toc-backref" href="#id30">3.3.9&nbsp;&nbsp;&nbsp;Herramientas de Lectura</a></h3>
+</div>
+<div class="section" id="reportes-y-estadisticas">
+<h3><a class="toc-backref" href="#id31">3.3.10&nbsp;&nbsp;&nbsp;Reportes y Estadísticas</a></h3>
+</div>
+<div class="section" id="suscripciones">
+<h3><a class="toc-backref" href="#id32">3.3.11&nbsp;&nbsp;&nbsp;Suscripciones</a></h3>
+</div>
+</div>
+<div class="section" id="gestion-de-usuarios">
+<h2><a class="toc-backref" href="#id33">3.4&nbsp;&nbsp;&nbsp;Gestión de Usuarios</a></h2>
+<div class="section" id="enviar-correo-electronico-a-usuarios">
+<h3><a class="toc-backref" href="#id34">3.4.1&nbsp;&nbsp;&nbsp;Enviar correo electrónico a usuarios</a></h3>
+</div>
+<div class="section" id="inscribir-usuarios-existentes">
+<h3><a class="toc-backref" href="#id35">3.4.2&nbsp;&nbsp;&nbsp;Inscribir Usuarios Existentes</a></h3>
+</div>
+<div class="section" id="mostrar-usuarios-sin-rol">
+<h3><a class="toc-backref" href="#id36">3.4.3&nbsp;&nbsp;&nbsp;Mostrar Usuarios sin Rol</a></h3>
+</div>
+<div class="section" id="crear-usuarios">
+<h3><a class="toc-backref" href="#id37">3.4.4&nbsp;&nbsp;&nbsp;Crear Usuarios</a></h3>
+</div>
+<div class="section" id="unir-usuarios">
+<h3><a class="toc-backref" href="#id38">3.4.5&nbsp;&nbsp;&nbsp;Unir Usuarios</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="proceso-de-edicion-y-publicacion">
+<h1><a class="toc-backref" href="#id39">4&nbsp;&nbsp;&nbsp;Proceso de Edición y Publicación</a></h1>
+<div class="section" id="autoras-es">
+<h2><a class="toc-backref" href="#id40">4.1&nbsp;&nbsp;&nbsp;Autoras/es</a></h2>
+</div>
+<div class="section" id="editoras-es">
+<h2><a class="toc-backref" href="#id41">4.2&nbsp;&nbsp;&nbsp;Editoras/es</a></h2>
+</div>
+<div class="section" id="editoras-es-de-seccion">
+<h2><a class="toc-backref" href="#id42">4.3&nbsp;&nbsp;&nbsp;Editoras/es de Sección</a></h2>
+</div>
+<div class="section" id="revisoras-es">
+<h2><a class="toc-backref" href="#id43">4.4&nbsp;&nbsp;&nbsp;Revisoras/es</a></h2>
+</div>
+<div class="section" id="correctoras-es">
+<h2><a class="toc-backref" href="#id44">4.5&nbsp;&nbsp;&nbsp;Correctoras/es</a></h2>
+</div>
+<div class="section" id="editoras-es-de-maquetacion">
+<h2><a class="toc-backref" href="#id45">4.6&nbsp;&nbsp;&nbsp;Editoras/es de Maquetación</a></h2>
+</div>
+<div class="section" id="correctoras-es-de-pruebas">
+<h2><a class="toc-backref" href="#id46">4.7&nbsp;&nbsp;&nbsp;Correctoras/es de Pruebas</a></h2>
+</div>
+<div class="section" id="lectoras-es">
+<h2><a class="toc-backref" href="#id47">4.8&nbsp;&nbsp;&nbsp;Lectoras/es</a></h2>
+</div>
+</div>
+</div>
+</body>
+</html>
