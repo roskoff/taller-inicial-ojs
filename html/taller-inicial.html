@@ -375,6 +375,20 @@ ul.auto-toc {
 <li><a class="reference internal" href="#lectoras-es" id="id47">4.8&nbsp;&nbsp;&nbsp;Lectoras/es</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#administracion-del-sistema" id="id48">5&nbsp;&nbsp;&nbsp;Administración del Sistema</a><ul class="auto-toc">
+<li><a class="reference internal" href="#instalacion" id="id49">5.1&nbsp;&nbsp;&nbsp;Instalación</a><ul class="auto-toc">
+<li><a class="reference internal" href="#requisitos-minimos-y-deseables" id="id50">5.1.1&nbsp;&nbsp;&nbsp;Requisitos mínimos y deseables</a></li>
+<li><a class="reference internal" href="#componentes-de-una-instalacion" id="id51">5.1.2&nbsp;&nbsp;&nbsp;Componentes de una Instalación</a></li>
+<li><a class="reference internal" href="#el-proceso-de-instalacion" id="id52">5.1.3&nbsp;&nbsp;&nbsp;El Proceso de Instalación</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#copias-de-respaldo-y-restauracion" id="id53">5.2&nbsp;&nbsp;&nbsp;Copias de Respaldo y Restauración</a><ul class="auto-toc">
+<li><a class="reference internal" href="#realizar-copias-de-respaldo-del-sistema" id="id54">5.2.1&nbsp;&nbsp;&nbsp;Realizar Copias de Respaldo del Sistema</a></li>
+<li><a class="reference internal" href="#restaurar-datos-de-una-copia-de-respaldo" id="id55">5.2.2&nbsp;&nbsp;&nbsp;Restaurar Datos de una Copia de Respaldo</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="introduccion-a-ojs">
@@ -642,6 +656,140 @@ eliminado, estos enlaces desaparecerán automáticamente.</li>
 </div>
 <div class="section" id="lectoras-es">
 <h2><a class="toc-backref" href="#id47">4.8&nbsp;&nbsp;&nbsp;Lectoras/es</a></h2>
+</div>
+</div>
+<div class="section" id="administracion-del-sistema">
+<h1><a class="toc-backref" href="#id48">5&nbsp;&nbsp;&nbsp;Administración del Sistema</a></h1>
+<p>Las siguientes instrucciones demostrarán cómo instalar OJS, cómo hacer
+copias de respaldo del sistema y cómo restaurarlas. Los requerimientos del
+sistema que se listan a continuación deben cumplirse antes de iniciar el
+proceso de instalación.</p>
+<div class="section" id="instalacion">
+<h2><a class="toc-backref" href="#id49">5.1&nbsp;&nbsp;&nbsp;Instalación</a></h2>
+<div class="section" id="requisitos-minimos-y-deseables">
+<h3><a class="toc-backref" href="#id50">5.1.1&nbsp;&nbsp;&nbsp;Requisitos mínimos y deseables</a></h3>
+<ul class="simple">
+<li>Requerimientos mínimos para el sistema:<ul>
+<li>PHP &gt;= 4.2.x (incluyendo PHP 5.x); Microsoft IIS requiere PHP 5.</li>
+<li>MySQL &gt;= 3.23.23 (incluyendo MySQL 4.x y 5.x) o PostgreSQL &gt;= 7.1
+(incluyendo PostgreSQL 8.x)</li>
+<li>Apache &gt;= 1.3.2x o &gt;= 2.0.4x o Microsoft IIS 6</li>
+<li>Sistema Operativo: Cualquier sistema operativo que soporte el software
+mencionado arriba, incluyendo Linux, BSD, Solaris, Mac OS X, Windows.</li>
+</ul>
+</li>
+<li>Configuración recomendada del servidor<ul>
+<li>PHP 5.x con soporte para iconv, mbstring, libgd y libfreetype</li>
+<li>MySQL 5.x con conexión y almacenamiento de datos utilizando UTF8</li>
+<li>Sistema Operativo del tipo *NIX (Linux, BSD, Mac OS X)</li>
+<li>Servidor Web Apache configurado con PHP via FastCGI</li>
+</ul>
+</li>
+</ul>
+<p>También se recomienda tener acceso <a class="reference external" href="http://en.wikipedia.org/wiki/Secure_Shell">SSH</a> al servidor, pues
+verá que esto será necesario para realizar tareas de nivel avanzado,
+además de ser útil en general.</p>
+</div>
+<div class="section" id="componentes-de-una-instalacion">
+<h3><a class="toc-backref" href="#id51">5.1.2&nbsp;&nbsp;&nbsp;Componentes de una Instalación</a></h3>
+<ul class="simple">
+<li>Ruta de instalación que contiene el OJS (típicamente 10-20Mb)</li>
+<li>El tamaño de la ruta de los archivos (configurado en <em>config.inc.php</em>
+utilizando la directiva <em>files_dir</em>, varía dependiendo de los documentos
+que están siendo gestionados (por ejemplo: el formato de los archivos,
+la complejidad del diseño, cantidad de rondas de revisión, etc.)</li>
+<li>El tamaño de la base de datos MySQL (configurado en <em>config.inc.php</em> en
+la sección <em>[database]</em>, varía de unas decenas de megabytes para
+pequeñas revistas a cientos de megabytes para grandes revistas o
+colecciones.</li>
+<li>OJS contiene librerías open source de terceros, entre ellas:<ul>
+<li><a class="reference external" href="http://adodb.sourceforge.net/">ADODB</a>, librería de abstracción de datos para PHP</li>
+<li><a class="reference external" href="http://smarty.net/">Smarty</a>, para plantillas e interfaz general</li>
+<li><a class="reference external" href="http://www.moxiecode.com/">TinyMCE</a>, editor sencillo incrustado</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="el-proceso-de-instalacion">
+<h3><a class="toc-backref" href="#id52">5.1.3&nbsp;&nbsp;&nbsp;El Proceso de Instalación</a></h3>
+<p>Existe varios pasos a llevar a cabo para una instalación exitosa de OJS:
+descargar y descomprimir los archivos de OJS en un directorio accesible vía
+web en su servidor, crear un directorio separado <em>files/</em> que no sea
+accesible vía web y lo más probable creación de la base de datos con algún
+usuario para acceder a la misma.</p>
+<ul>
+<li><p class="first">Descargar y descomprimir el paquete de instalación del sitio oficial</p>
+<p>Puede elegir la versión que más le conviene según sus necesidades
+(versiones estables o versiones de prueba) desde aquí <a class="reference external" href="http://pkp.sfu.ca/ojs_download">http://pkp.sfu.ca/ojs_download</a>.
+El proceso de instalación es el mismo para cualquier versión.</p>
+<p>Descomprima el <a class="reference external" href="http://en.wikipedia.org/wiki/Tar_%28file_format%29">archivo tar</a> que
+descargó y mueva todo el contenido que descomprimió a un directorio que
+sea accesible vía web en el servidor web que quiera instalar OJS. Un ejemplo
+común es el directorio <tt class="docutils literal">/var/www/html/</tt>, el cual utilizaremos para este
+ejemplo.</p>
+<p>Si no pudo descargar directamente el <em>archivo tar</em> en su servidor web, puede
+descomprimirlo en su computadora personal y luego transferir el contenido
+vía FTP.</p>
+<p>Digamos que el contenido se descomprime en un directorio llamado <tt class="docutils literal">ojs</tt>,
+entonces puede mover el mismo dentro de  <tt class="docutils literal">/var/www/html/</tt>, en este punto, ya
+podrá acceder al contenido del directorio vía web en su servidor (es decir
+que con el navegador puede ir a <a class="reference external" href="http://ejemplo.com/ojs/">http://ejemplo.com/ojs/</a> y podrá ver la
+pantalla de instalación.</p>
+<p>(imagen pantalla instalación)</p>
+</li>
+<li><p class="first">Preparar el entorno para la instalación</p>
+<p>Necesitará crear un directorio <tt class="docutils literal">files/</tt> en donde OJS almacenarán los
+archivos enviados. Este directorio no debería ser accesible vía web ya que
+sería posible acceder en línea a archivos privados. Para evitar esto, debe
+crear el directorio fuera de <tt class="docutils literal">/var/www/</tt>.</p>
+<p>Luego necesitará otorgar los permisos necesarios al directorio <tt class="docutils literal">files/</tt>, a
+los subdirectorios <tt class="docutils literal">public/</tt> y <tt class="docutils literal">cache/</tt> de la ruta de instalación de OJS
+y el archivo de configuración <tt class="docutils literal">config.ini.php</tt> para que el servidor web
+pueda administrar/guardar correctamente los datos que vaya recibiendo.</p>
+<p>En la página de instalación recibirá una advertencia si los permisos no están
+debidamente configurados.</p>
+<p>(imagen permisos insuficientes)</p>
+</li>
+<li><p class="first">Configurar la base de datos</p>
+<p>Necesitará crear una base de datos para que el sistema la utilice, además de
+asegurarse de que exista un usuario de la base que tenga los permisos
+necesarios para operarla debidamente.</p>
+<p>Por ejemplo, para MySQL, se puede crear una base de datos y un usuario con
+phpMyAdmin o vía línea de comandos, como se muestra a continuación:</p>
+<pre class="literal-block">
+$ mysql -u root -p
+Enter password:
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 95
+Server version: 5.1.38 MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql&gt; CREATE DATABASE ojs DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.13 sec)
+
+mysql&gt; GRANT ALL ON ojs.* TO pkpuser&#64;localhost IDENTIFIED BY 'password';
+Query OK, 0 rows affected (0.15 sec)
+
+mysql&gt; exit;
+Bye
+</pre>
+<p>En este ejemplo, la base de datos se llama <tt class="docutils literal">ojs</tt>, el usuario de la base se
+llama <tt class="docutils literal">pkpuser</tt> y la contraseña es <tt class="docutils literal">password</tt>. Se necesitarán estas tres
+piezas de información mas adelante.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="copias-de-respaldo-y-restauracion">
+<h2><a class="toc-backref" href="#id53">5.2&nbsp;&nbsp;&nbsp;Copias de Respaldo y Restauración</a></h2>
+<div class="section" id="realizar-copias-de-respaldo-del-sistema">
+<h3><a class="toc-backref" href="#id54">5.2.1&nbsp;&nbsp;&nbsp;Realizar Copias de Respaldo del Sistema</a></h3>
+</div>
+<div class="section" id="restaurar-datos-de-una-copia-de-respaldo">
+<h3><a class="toc-backref" href="#id55">5.2.2&nbsp;&nbsp;&nbsp;Restaurar Datos de una Copia de Respaldo</a></h3>
+</div>
 </div>
 </div>
 </div>

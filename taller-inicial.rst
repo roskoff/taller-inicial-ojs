@@ -248,3 +248,139 @@ Correctoras/es de Pruebas
 -------------------------
 Lectoras/es
 -----------
+
+Administración del Sistema
+==========================
+Las siguientes instrucciones demostrarán cómo instalar OJS, cómo hacer
+copias de respaldo del sistema y cómo restaurarlas. Los requerimientos del
+sistema que se listan a continuación deben cumplirse antes de iniciar el
+proceso de instalación.
+
+Instalación
+-----------
+Requisitos mínimos y deseables
+..............................
+* Requerimientos mínimos para el sistema:
+
+  * PHP >= 4.2.x (incluyendo PHP 5.x); Microsoft IIS requiere PHP 5.
+  * MySQL >= 3.23.23 (incluyendo MySQL 4.x y 5.x) o PostgreSQL >= 7.1
+    (incluyendo PostgreSQL 8.x)
+  * Apache >= 1.3.2x o >= 2.0.4x o Microsoft IIS 6
+  * Sistema Operativo: Cualquier sistema operativo que soporte el software
+    mencionado arriba, incluyendo Linux, BSD, Solaris, Mac OS X, Windows.
+
+* Configuración recomendada del servidor
+
+  * PHP 5.x con soporte para iconv, mbstring, libgd y libfreetype
+  * MySQL 5.x con conexión y almacenamiento de datos utilizando UTF8
+  * Sistema Operativo del tipo \*NIX (Linux, BSD, Mac OS X)
+  * Servidor Web Apache configurado con PHP via FastCGI 
+
+También se recomienda tener acceso `SSH <http://en.wikipedia.org/wiki/Secure_Shell>`_ al servidor, pues
+verá que esto será necesario para realizar tareas de nivel avanzado,
+además de ser útil en general.
+
+Componentes de una Instalación
+..............................
+* Ruta de instalación que contiene el OJS (típicamente 10-20Mb)
+* El tamaño de la ruta de los archivos (configurado en *config.inc.php* 
+  utilizando la directiva *files_dir*, varía dependiendo de los documentos
+  que están siendo gestionados (por ejemplo: el formato de los archivos,
+  la complejidad del diseño, cantidad de rondas de revisión, etc.)
+* El tamaño de la base de datos MySQL (configurado en *config.inc.php* en
+  la sección *[database]*, varía de unas decenas de megabytes para
+  pequeñas revistas a cientos de megabytes para grandes revistas o 
+  colecciones.
+* OJS contiene librerías open source de terceros, entre ellas:
+
+  * `ADODB <http://adodb.sourceforge.net/>`_, librería de abstracción de datos para PHP
+  * `Smarty <http://smarty.net/>`_, para plantillas e interfaz general
+  * `TinyMCE <http://www.moxiecode.com/>`_, editor sencillo incrustado
+
+El Proceso de Instalación
+.........................
+Existe varios pasos a llevar a cabo para una instalación exitosa de OJS:
+descargar y descomprimir los archivos de OJS en un directorio accesible vía
+web en su servidor, crear un directorio separado *files/* que no sea 
+accesible vía web y lo más probable creación de la base de datos con algún
+usuario para acceder a la misma.
+
+* Descargar y descomprimir el paquete de instalación del sitio oficial
+
+  Puede elegir la versión que más le conviene según sus necesidades
+  (versiones estables o versiones de prueba) desde aquí http://pkp.sfu.ca/ojs_download.
+  El proceso de instalación es el mismo para cualquier versión.
+
+  Descomprima el `archivo tar <http://en.wikipedia.org/wiki/Tar_%28file_format%29>`_ que
+  descargó y mueva todo el contenido que descomprimió a un directorio que
+  sea accesible vía web en el servidor web que quiera instalar OJS. Un ejemplo
+  común es el directorio ``/var/www/html/``, el cual utilizaremos para este
+  ejemplo.
+
+  Si no pudo descargar directamente el *archivo tar* en su servidor web, puede 
+  descomprimirlo en su computadora personal y luego transferir el contenido
+  vía FTP.
+
+  Digamos que el contenido se descomprime en un directorio llamado ``ojs``,
+  entonces puede mover el mismo dentro de  ``/var/www/html/``, en este punto, ya
+  podrá acceder al contenido del directorio vía web en su servidor (es decir
+  que con el navegador puede ir a http://ejemplo.com/ojs/ y podrá ver la
+  pantalla de instalación.
+
+  (imagen pantalla instalación)
+
+* Preparar el entorno para la instalación
+
+  Necesitará crear un directorio ``files/`` en donde OJS almacenarán los
+  archivos enviados. Este directorio no debería ser accesible vía web ya que
+  sería posible acceder en línea a archivos privados. Para evitar esto, debe
+  crear el directorio fuera de ``/var/www/``.
+
+  Luego necesitará otorgar los permisos necesarios al directorio ``files/``, a
+  los subdirectorios ``public/`` y ``cache/`` de la ruta de instalación de OJS
+  y el archivo de configuración ``config.ini.php`` para que el servidor web 
+  pueda administrar/guardar correctamente los datos que vaya recibiendo.
+
+  En la página de instalación recibirá una advertencia si los permisos no están
+  debidamente configurados.
+
+  (imagen permisos insuficientes)
+
+* Configurar la base de datos
+
+  Necesitará crear una base de datos para que el sistema la utilice, además de
+  asegurarse de que exista un usuario de la base que tenga los permisos
+  necesarios para operarla debidamente.
+
+  Por ejemplo, para MySQL, se puede crear una base de datos y un usuario con
+  phpMyAdmin o vía línea de comandos, como se muestra a continuación::
+
+
+   $ mysql -u root -p
+   Enter password: 
+   
+   Welcome to the MySQL monitor.  Commands end with ; or \g.
+   Your MySQL connection id is 95
+   Server version: 5.1.38 MySQL Community Server (GPL)
+   
+   Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+   
+   mysql> CREATE DATABASE ojs DEFAULT CHARACTER SET utf8;
+   Query OK, 1 row affected (0.13 sec)
+   
+   mysql> GRANT ALL ON ojs.* TO pkpuser@localhost IDENTIFIED BY 'password';
+   Query OK, 0 rows affected (0.15 sec)
+   
+   mysql> exit;
+   Bye
+
+  En este ejemplo, la base de datos se llama ``ojs``, el usuario de la base se
+  llama ``pkpuser`` y la contraseña es ``password``. Se necesitarán estas tres
+  piezas de información mas adelante.
+
+Copias de Respaldo y Restauración
+---------------------------------
+Realizar Copias de Respaldo del Sistema
+.......................................
+Restaurar Datos de una Copia de Respaldo
+........................................
