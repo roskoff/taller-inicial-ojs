@@ -839,11 +839,129 @@ datos.</p>
 </div>
 <div class="section" id="copias-de-respaldo-y-restauracion">
 <h2><a class="toc-backref" href="#id53">5.2&nbsp;&nbsp;&nbsp;Copias de Respaldo y Restauración</a></h2>
+<p>Una copia de respaldo completa de una instalación OJS debería incluír tres
+componentes: los archivos de sistema de OJS, el directorio <tt class="docutils literal">files/</tt> que creó
+durante la instalación y la base de datos. Hay muchas maneras de hacer copias
+de respaldo para estos tres componentes. Dependiendo de las herramientas a su
+disposición podría ser capaz de realizar las copias de respaldo completamente
+vía web mediante alguna interfaz administrativa como CPanel, o tal vez tenga
+que realizar las copias de respaldo vía linea de comandos. La siguiente
+sección demuestra una de las maneras de realizar la copia de respaldo vía línea
+de comandos.</p>
 <div class="section" id="realizar-copias-de-respaldo-del-sistema">
 <h3><a class="toc-backref" href="#id54">5.2.1&nbsp;&nbsp;&nbsp;Realizar Copias de Respaldo del Sistema</a></h3>
+<ul>
+<li><p class="first">Copia de Respaldo de los archivos de sistema de OJS</p>
+<p>Para encontrar los archivos del sistema debe buscar su archivo de
+configuración <tt class="docutils literal">config.inc.php</tt>, éste estará en el directorio donde
+originalmente se instaló OJS. Copie todos los archivos de este directorio y
+todos sus sub-directorios. Suponiendo que OJS está isntalado en
+<tt class="docutils literal">/var/www/html/ojs</tt> y la copia de respaldo debe ser almacenada en
+<tt class="docutils literal">/root</tt>, el siguente ejemplo comprimirá los archivos de sistema de OJS en
+un archivo llamado <tt class="docutils literal"><span class="pre">ojs-install.tar.gz</span></tt> y los almacenará en <tt class="docutils literal">/root</tt>:</p>
+<pre class="literal-block">
+$ cd /var/www/html/ojs
+$ tar czf /root/ojs-install.tar.gz *
+</pre>
+</li>
+<li><p class="first">Copia de Respaldo de la base de datos</p>
+<p>Aquí necesita saber el nombre de la base de datos, el usuario y la contraseña
+de la misma. Esta información la puede obtener fijándose en la sección
+<tt class="docutils literal">[database]</tt> en su archivo de configuración <tt class="docutils literal">config.inc.php</tt>:</p>
+<pre class="literal-block">
+[database]
+
+driver = mysql
+host = localhost
+username = pkpuser
+password = password
+name = ojs
+</pre>
+<p>Puede realizar la copia de respaldo utilizando la herramienta mysqldump. Por
+ejemplo, si la copia de respaldo debe almacenarse en <tt class="docutils literal">/root</tt>:</p>
+<pre class="literal-block">
+$ mysqldump -u pkpuser -p password | gzip -9 &gt; /root/ojs-database.sql.gz
+</pre>
+<p>Como es de suponerse, phpMyAdmin u otras herramientas podrían ser utilizadas
+para realizar la copia de respaldo de la base de datos.</p>
+</li>
+<li><p class="first">Copia de Respaldo del directorio <tt class="docutils literal">files/</tt></p>
+<p>Para saber dónde está el directorio <tt class="docutils literal">files/</tt>, fíjese en el parámetro
+<tt class="docutils literal">files_dir</tt> en el archivo de configuración <tt class="docutils literal">config.inc.php</tt>:</p>
+<pre class="literal-block">
+[files]
+
+; Complete path to directory to store uploaded files
+; (This directory should not be directly web-accessible)
+; Windows users should use forward slashes
+files_dir = /usr/local/ojs-files
+</pre>
+<p>Copie este directorio y todo su contenido, por ejemplo, si la copia de
+respaldo se almacenara en <tt class="docutils literal">/root</tt>:</p>
+<pre class="literal-block">
+$ cd /usr/local/ojs-files/
+$ tar czf /root/ojs-files.tar.gz
+</pre>
+<p>Cuando estos pasos se hayan completado, habrá creado tres archivos de copia
+de respaldo que se encuentran en <tt class="docutils literal">/root</tt>. Todos ellos son necesarios para
+restaurar una copia de la instalación de OJS.</p>
+</li>
+</ul>
 </div>
 <div class="section" id="restaurar-datos-de-una-copia-de-respaldo">
 <h3><a class="toc-backref" href="#id55">5.2.2&nbsp;&nbsp;&nbsp;Restaurar Datos de una Copia de Respaldo</a></h3>
+<p>Esta sección muestra un breve resumen de cómo un sistema OJS puede ser
+restaurado de copias de respaldo realizadas en la sección anterior. Esta es
+sólo una manera de restaurar el sistema, existen muchas otras maneras
+dependiendo de las herramientas que tenga a su disposición como así también
+depende de la manera en que haya realizado las copias de respaldo.</p>
+<ul>
+<li><p class="first">Restaurar los archivos</p>
+<p>Para restaurar de una copia de respaldo, descomprima en el lugar apropiado
+los archivos correspondientes al directorio <tt class="docutils literal">files/</tt> y al directorio que
+contiene los archivos del sistema de la siguiente manera:</p>
+<pre class="literal-block">
+$ cd /var/www/html
+$ mkdir ojs
+$ cd ojs
+$ tar xzf /root/ojs-install.tar.gz
+$ cd /usr/local
+$ mkdir ojs-files
+$ cd ojs-files
+$ tar xzf /root/ojs-files.tar.gz
+</pre>
+</li>
+<li><p class="first">Restaurar la base de datos</p>
+<p>Para crear de vuelta la base de datos MySQL (eliminándola primero si fuera
+necesario):</p>
+<pre class="literal-block">
+$ mysql -u root -p
+Enter password:
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 103
+Server version: 5.1.38 MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql&gt; DROP DATABASE ojs;
+Query OK, 0 rows affected (0.23 sec)
+
+mysql&gt; CREATE DATABASE ojs DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; GRANT ALL ON ojs.* TO pkpuser&#64;localhost IDENTIFIED BY 'password';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt;
+</pre>
+<p>Y luego cargue en la nueva base de datos el contenido de la copia de
+respaldo:</p>
+<pre class="literal-block">
+$ zcat /root/ojs-database.sql.gz | mysql -u pkpuser -p password
+</pre>
+</li>
+</ul>
 </div>
 </div>
 </div>

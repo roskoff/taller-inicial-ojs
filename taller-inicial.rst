@@ -452,12 +452,129 @@ usuario para acceder a la misma.
 
   (imagen manual installation)
 
-
-
-
 Copias de Respaldo y Restauración
 ---------------------------------
+Una copia de respaldo completa de una instalación OJS debería incluír tres
+componentes: los archivos de sistema de OJS, el directorio ``files/`` que creó
+durante la instalación y la base de datos. Hay muchas maneras de hacer copias
+de respaldo para estos tres componentes. Dependiendo de las herramientas a su
+disposición podría ser capaz de realizar las copias de respaldo completamente
+vía web mediante alguna interfaz administrativa como CPanel, o tal vez tenga
+que realizar las copias de respaldo vía linea de comandos. La siguiente
+sección demuestra una de las maneras de realizar la copia de respaldo vía línea
+de comandos.
+
 Realizar Copias de Respaldo del Sistema
 .......................................
+
+* Copia de Respaldo de los archivos de sistema de OJS
+
+  Para encontrar los archivos del sistema debe buscar su archivo de 
+  configuración ``config.inc.php``, éste estará en el directorio donde 
+  originalmente se instaló OJS. Copie todos los archivos de este directorio y
+  todos sus sub-directorios. Suponiendo que OJS está isntalado en 
+  ``/var/www/html/ojs`` y la copia de respaldo debe ser almacenada en
+  ``/root``, el siguente ejemplo comprimirá los archivos de sistema de OJS en
+  un archivo llamado ``ojs-install.tar.gz`` y los almacenará en ``/root``::
+
+    $ cd /var/www/html/ojs
+    $ tar czf /root/ojs-install.tar.gz *
+  
+* Copia de Respaldo de la base de datos
+
+  Aquí necesita saber el nombre de la base de datos, el usuario y la contraseña
+  de la misma. Esta información la puede obtener fijándose en la sección 
+  ``[database]`` en su archivo de configuración ``config.inc.php``::
+
+    [database]
+
+    driver = mysql
+    host = localhost
+    username = pkpuser
+    password = password
+    name = ojs
+
+  Puede realizar la copia de respaldo utilizando la herramienta mysqldump. Por
+  ejemplo, si la copia de respaldo debe almacenarse en ``/root``::
+
+    $ mysqldump -u pkpuser -p password | gzip -9 > /root/ojs-database.sql.gz
+
+  Como es de suponerse, phpMyAdmin u otras herramientas podrían ser utilizadas
+  para realizar la copia de respaldo de la base de datos.
+
+* Copia de Respaldo del directorio ``files/``
+
+  Para saber dónde está el directorio ``files/``, fíjese en el parámetro 
+  ``files_dir`` en el archivo de configuración ``config.inc.php``::
+
+    [files]
+
+    ; Complete path to directory to store uploaded files
+    ; (This directory should not be directly web-accessible)
+    ; Windows users should use forward slashes
+    files_dir = /usr/local/ojs-files
+
+  Copie este directorio y todo su contenido, por ejemplo, si la copia de
+  respaldo se almacenara en ``/root``::
+
+    $ cd /usr/local/ojs-files/
+    $ tar czf /root/ojs-files.tar.gz
+
+  Cuando estos pasos se hayan completado, habrá creado tres archivos de copia
+  de respaldo que se encuentran en ``/root``. Todos ellos son necesarios para
+  restaurar una copia de la instalación de OJS.
+
 Restaurar Datos de una Copia de Respaldo
 ........................................
+Esta sección muestra un breve resumen de cómo un sistema OJS puede ser
+restaurado de copias de respaldo realizadas en la sección anterior. Esta es 
+sólo una manera de restaurar el sistema, existen muchas otras maneras 
+dependiendo de las herramientas que tenga a su disposición como así también 
+depende de la manera en que haya realizado las copias de respaldo.
+
+* Restaurar los archivos
+
+  Para restaurar de una copia de respaldo, descomprima en el lugar apropiado 
+  los archivos correspondientes al directorio ``files/`` y al directorio que
+  contiene los archivos del sistema de la siguiente manera::
+
+    $ cd /var/www/html
+    $ mkdir ojs
+    $ cd ojs
+    $ tar xzf /root/ojs-install.tar.gz
+    $ cd /usr/local
+    $ mkdir ojs-files
+    $ cd ojs-files
+    $ tar xzf /root/ojs-files.tar.gz
+
+* Restaurar la base de datos
+
+  Para crear de vuelta la base de datos MySQL (eliminándola primero si fuera
+  necesario)::
+
+    $ mysql -u root -p
+    Enter password:
+
+    Welcome to the MySQL monitor.  Commands end with ; or \g.
+    Your MySQL connection id is 103
+    Server version: 5.1.38 MySQL Community Server (GPL)
+
+    Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+    mysql> DROP DATABASE ojs;
+    Query OK, 0 rows affected (0.23 sec)
+
+    mysql> CREATE DATABASE ojs DEFAULT CHARACTER SET utf8;
+    Query OK, 1 row affected (0.00 sec)
+
+    mysql> GRANT ALL ON ojs.* TO pkpuser@localhost IDENTIFIED BY 'password';
+    Query OK, 0 rows affected (0.01 sec)
+
+    mysql> 
+  
+  Y luego cargue en la nueva base de datos el contenido de la copia de
+  respaldo::
+
+    $ zcat /root/ojs-database.sql.gz | mysql -u pkpuser -p password
+
+
