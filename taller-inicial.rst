@@ -164,11 +164,103 @@ Usuarios y Roles
 
 Acerca de los Roles de Usuario
 ..............................
+OJS utiliza un sistema de roles global para dividir el trabajo entre los
+usuarios, asignar los flujos de trabajo y limitar el acceso a diferentes partes
+del sistema. Como una instalación de OJS puede albergar múltiples revistas, 
+los usuarios pueden estar inscritos en diferentes roles en más de una revista.
+
+Cuando un usuario inicia sesión en el sistema, será dirigido a su página de
+Área Personal. Desde allí podrá ver una lista de los roles en los que está
+inscrito para cada revista en el sistema (además de ver enlaces específicos de
+usuario para editar su perfil, cambiar su contraseña, etc.). En el ejemplo de 
+abajo, el usuario está inscrito como Adminstrador del Sitio, tiene roles
+de Gestión de Revista, Gestión de Subscripciones y Editor en la revista
+*Canadian Journal of Scholarlly Publishing*; además tiene roles de Gestión de 
+Revista, Editor y Autor para la revista *Demo Journal*. Un usuario podría ser un
+Editor en una revista (con todos los permisos que corresponda), pero puede que
+sólo tenga rol de Autor en otra revista (por lo tanto estará limitado a
+realizar tareas de Autor para esa revista).
+
+(imagen user home)
 
 Roles disponibles en OJS
 ........................
+* Administrador del Sitio
 
-Registrandose en una Revista
+  El Administrador del Sitio es el responsable general de la instalación de
+  OJS, debe asegurarse de que las configuraciones del servidor son correctas,
+  agrega archivos de idiomas y crea las revistas nuevas en la instalación. La
+  cuenta del Administrador del sitio es creada durante el proceso de
+  instalación. A diferencia de los demás roles en OJS, puede haber sólo un
+  Administrador de Sitio.
+
+  Para más detalles puede ver la sección Administrador del Sitio.
+
+* Gestión de Revista
+
+  El rol de Gestión de Revista es responsable de configurar el sitio web de la
+  revista, configurar las opciones del sistema y gestionar las cuentas de
+  usuarios. Esto no requiere ninguna habilidad técnica en especial, pero
+  implica llenar formularios web y subir archivos al servidor. El o La Gestor/a
+  de la Revista también inscribe a las/los Editoras/es, Editoras/es de Sección,
+  Correctoras/es, Editoras/es de Maquetación, Correctoras/es de Pruebas, 
+  Autoras/es y Revisoras/es. Alternativamente, si los nombres respectivas
+  direcciones de correo electrónico de usuarios potenciales ya existen en otra
+  base de datos (por ejemplo, una planilla de cálculo electrónica), pueden ser
+  importados en el sistema. El o La Gestor/a de Revista también tiene acceso
+  a otras características de la revista, y puede crear nuevas Secciones para
+  la revista, configurar Formularios de Revisión, editar correos
+  electrónicos por defecto, gestionar Herramientas de Lectura, ver
+  Estadísticas y Reportes y más.
+
+  Para más detalles puede ver la sección Gestor/a de Revista
+
+* Lectoras/es
+
+  El rol de Lectoras/es es el rol más simple en OJS y el que menos capacidades
+  tiene en el sistema. Las/os Lectoras/es incluyen a los subscriptores
+  tanto para revistas basadas en subscripciones y lectoras/es que se registran
+  a revistas de acceso libre (ya sea de acceso libre inmediato o luego de un
+  periodo de tiempo). Las/os Lectoras/es registrados reciben notificaciones vía
+  correo electrónico con la publicación de cada edición, la cual incluye la 
+  Tabla de Contenidos para esa edición particular.
+
+  Para más detalles puede ver la sección `Lectoras/es`_
+
+* Autoras/es
+
+  Las/os Autoras/es son capaces de enviar manuscritos o artículos a la revista 
+  directamente a través de la página web de la revista. Se le solicita que 
+  suba un archivo de envío y que provea metadatos o información para 
+  indexación. (Los metadatos mejoran la capacidad de búsqueda on line de la
+  revista). El o La Autor/a puede subir archivos suplementarios, en forma de
+  conjunto de datos, instrumentos de investigación, o fuentes textuales que 
+  enriquezcan el artículo, de manera a contribuír a una investigación 
+  académica más abierta y robusta. Al iniciar sesión en la página web de la 
+  revista, el o la Autor/a es capáz de hacer el seguimiento de su envío a 
+  través del proceso de revisión y editorial - además de participar como 
+  corrector y corrector de prueba en los envíos aceptados para publicación.
+
+  Para más detalles puede ver la sección `Autoras/es`_.
+
+* Editoras/es
+
+* Editoras/es de Sección
+
+* Revisoras/es
+
+* Gestión de Subscripción
+
+* Correctoras/es
+
+* Editoras/es de Maquetación
+
+* Correctoras/es de Prueba
+
+
+
+
+Registrarse en una Revista
 ............................
 
 Viendo y Cambiando su Perfil

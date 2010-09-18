@@ -324,7 +324,7 @@ ul.auto-toc {
 <li><a class="reference internal" href="#usuarios-y-roles" id="id8">2.2&nbsp;&nbsp;&nbsp;Usuarios y Roles</a><ul class="auto-toc">
 <li><a class="reference internal" href="#acerca-de-los-roles-de-usuario" id="id9">2.2.1&nbsp;&nbsp;&nbsp;Acerca de los Roles de Usuario</a></li>
 <li><a class="reference internal" href="#roles-disponibles-en-ojs" id="id10">2.2.2&nbsp;&nbsp;&nbsp;Roles disponibles en OJS</a></li>
-<li><a class="reference internal" href="#registrandose-en-una-revista" id="id11">2.2.3&nbsp;&nbsp;&nbsp;Registrandose en una Revista</a></li>
+<li><a class="reference internal" href="#registrarse-en-una-revista" id="id11">2.2.3&nbsp;&nbsp;&nbsp;Registrarse en una Revista</a></li>
 <li><a class="reference internal" href="#viendo-y-cambiando-su-perfil" id="id12">2.2.4&nbsp;&nbsp;&nbsp;Viendo y Cambiando su Perfil</a></li>
 <li><a class="reference internal" href="#reseteando-su-contrasena" id="id13">2.2.5&nbsp;&nbsp;&nbsp;Reseteando su Contraseña</a></li>
 </ul>
@@ -541,12 +541,94 @@ eliminado, estos enlaces desaparecerán automáticamente.</li>
 <h2><a class="toc-backref" href="#id8">2.2&nbsp;&nbsp;&nbsp;Usuarios y Roles</a></h2>
 <div class="section" id="acerca-de-los-roles-de-usuario">
 <h3><a class="toc-backref" href="#id9">2.2.1&nbsp;&nbsp;&nbsp;Acerca de los Roles de Usuario</a></h3>
+<p>OJS utiliza un sistema de roles global para dividir el trabajo entre los
+usuarios, asignar los flujos de trabajo y limitar el acceso a diferentes partes
+del sistema. Como una instalación de OJS puede albergar múltiples revistas,
+los usuarios pueden estar inscritos en diferentes roles en más de una revista.</p>
+<p>Cuando un usuario inicia sesión en el sistema, será dirigido a su página de
+Área Personal. Desde allí podrá ver una lista de los roles en los que está
+inscrito para cada revista en el sistema (además de ver enlaces específicos de
+usuario para editar su perfil, cambiar su contraseña, etc.). En el ejemplo de
+abajo, el usuario está inscrito como Adminstrador del Sitio, tiene roles
+de Gestión de Revista, Gestión de Subscripciones y Editor en la revista
+<em>Canadian Journal of Scholarlly Publishing</em>; además tiene roles de Gestión de
+Revista, Editor y Autor para la revista <em>Demo Journal</em>. Un usuario podría ser un
+Editor en una revista (con todos los permisos que corresponda), pero puede que
+sólo tenga rol de Autor en otra revista (por lo tanto estará limitado a
+realizar tareas de Autor para esa revista).</p>
+<p>(imagen user home)</p>
 </div>
 <div class="section" id="roles-disponibles-en-ojs">
 <h3><a class="toc-backref" href="#id10">2.2.2&nbsp;&nbsp;&nbsp;Roles disponibles en OJS</a></h3>
+<ul>
+<li><p class="first">Administrador del Sitio</p>
+<p>El Administrador del Sitio es el responsable general de la instalación de
+OJS, debe asegurarse de que las configuraciones del servidor son correctas,
+agrega archivos de idiomas y crea las revistas nuevas en la instalación. La
+cuenta del Administrador del sitio es creada durante el proceso de
+instalación. A diferencia de los demás roles en OJS, puede haber sólo un
+Administrador de Sitio.</p>
+<p>Para más detalles puede ver la sección Administrador del Sitio.</p>
+</li>
+<li><p class="first">Gestión de Revista</p>
+<p>El rol de Gestión de Revista es responsable de configurar el sitio web de la
+revista, configurar las opciones del sistema y gestionar las cuentas de
+usuarios. Esto no requiere ninguna habilidad técnica en especial, pero
+implica llenar formularios web y subir archivos al servidor. El o La Gestor/a
+de la Revista también inscribe a las/los Editoras/es, Editoras/es de Sección,
+Correctoras/es, Editoras/es de Maquetación, Correctoras/es de Pruebas,
+Autoras/es y Revisoras/es. Alternativamente, si los nombres respectivas
+direcciones de correo electrónico de usuarios potenciales ya existen en otra
+base de datos (por ejemplo, una planilla de cálculo electrónica), pueden ser
+importados en el sistema. El o La Gestor/a de Revista también tiene acceso
+a otras características de la revista, y puede crear nuevas Secciones para
+la revista, configurar Formularios de Revisión, editar correos
+electrónicos por defecto, gestionar Herramientas de Lectura, ver
+Estadísticas y Reportes y más.</p>
+<p>Para más detalles puede ver la sección Gestor/a de Revista</p>
+</li>
+<li><p class="first">Lectoras/es</p>
+<p>El rol de Lectoras/es es el rol más simple en OJS y el que menos capacidades
+tiene en el sistema. Las/os Lectoras/es incluyen a los subscriptores
+tanto para revistas basadas en subscripciones y lectoras/es que se registran
+a revistas de acceso libre (ya sea de acceso libre inmediato o luego de un
+periodo de tiempo). Las/os Lectoras/es registrados reciben notificaciones vía
+correo electrónico con la publicación de cada edición, la cual incluye la
+Tabla de Contenidos para esa edición particular.</p>
+<p>Para más detalles puede ver la sección <a class="reference internal" href="#lectoras-es">Lectoras/es</a></p>
+</li>
+<li><p class="first">Autoras/es</p>
+<p>Las/os Autoras/es son capaces de enviar manuscritos o artículos a la revista
+directamente a través de la página web de la revista. Se le solicita que
+suba un archivo de envío y que provea metadatos o información para
+indexación. (Los metadatos mejoran la capacidad de búsqueda on line de la
+revista). El o La Autor/a puede subir archivos suplementarios, en forma de
+conjunto de datos, instrumentos de investigación, o fuentes textuales que
+enriquezcan el artículo, de manera a contribuír a una investigación
+académica más abierta y robusta. Al iniciar sesión en la página web de la
+revista, el o la Autor/a es capáz de hacer el seguimiento de su envío a
+través del proceso de revisión y editorial - además de participar como
+corrector y corrector de prueba en los envíos aceptados para publicación.</p>
+<p>Para más detalles puede ver la sección <a class="reference internal" href="#autoras-es">Autoras/es</a>.</p>
+</li>
+<li><p class="first">Editoras/es</p>
+</li>
+<li><p class="first">Editoras/es de Sección</p>
+</li>
+<li><p class="first">Revisoras/es</p>
+</li>
+<li><p class="first">Gestión de Subscripción</p>
+</li>
+<li><p class="first">Correctoras/es</p>
+</li>
+<li><p class="first">Editoras/es de Maquetación</p>
+</li>
+<li><p class="first">Correctoras/es de Prueba</p>
+</li>
+</ul>
 </div>
-<div class="section" id="registrandose-en-una-revista">
-<h3><a class="toc-backref" href="#id11">2.2.3&nbsp;&nbsp;&nbsp;Registrandose en una Revista</a></h3>
+<div class="section" id="registrarse-en-una-revista">
+<h3><a class="toc-backref" href="#id11">2.2.3&nbsp;&nbsp;&nbsp;Registrarse en una Revista</a></h3>
 </div>
 <div class="section" id="viendo-y-cambiando-su-perfil">
 <h3><a class="toc-backref" href="#id12">2.2.4&nbsp;&nbsp;&nbsp;Viendo y Cambiando su Perfil</a></h3>
