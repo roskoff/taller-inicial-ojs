@@ -453,12 +453,12 @@ sesión los enlaces Login y Registro son reemplazados por el enlace Área Person
 <p>(imagenes de barra de navegación, ambas)</p>
 <p>(explicar brevemente cada uno de los enlaces)</p>
 </li>
-<li><p class="first">Rastro de navegación</p>
-<p>Directamente bajo la barra de navegación superior encontrará un rastro de
+<li><p class="first">Traza de navegación</p>
+<p>Directamente bajo la barra de navegación superior encontrará una traza de
 la navegación actual con una serie de enlaces, uno por la página inicial
 del sitio, y uno por cada sub-página a la que haya navegado, terminando en
-la página en la que se encuentra cuyo enlace se encuentra resaltado en
-negrita. Cada enlace lo llevará de vuelta a esa sub-página específica.</p>
+la página en la que se encuentra (cuyo enlace se encuentra resaltado en
+negrita). Cada enlace lo llevará de vuelta a esa sub-página específica.</p>
 <p>(imagen breadcrumb)</p>
 </li>
 <li><p class="first">Barra Lateral</p>
@@ -694,12 +694,12 @@ además de ser útil en general.</p>
 <h3><a class="toc-backref" href="#id51">5.1.2&nbsp;&nbsp;&nbsp;Componentes de una Instalación</a></h3>
 <ul class="simple">
 <li>Ruta de instalación que contiene el OJS (típicamente 10-20Mb)</li>
-<li>El tamaño de la ruta de los archivos (configurado en <em>config.inc.php</em>
-utilizando la directiva <em>files_dir</em>, varía dependiendo de los documentos
+<li>El tamaño de la ruta de los archivos (configurado en <tt class="docutils literal">config.inc.php</tt>
+utilizando la directiva <tt class="docutils literal">files_dir</tt>, varía dependiendo de los documentos
 que están siendo gestionados (por ejemplo: el formato de los archivos,
 la complejidad del diseño, cantidad de rondas de revisión, etc.)</li>
-<li>El tamaño de la base de datos MySQL (configurado en <em>config.inc.php</em> en
-la sección <em>[database]</em>, varía de unas decenas de megabytes para
+<li>El tamaño de la base de datos MySQL (configurado en <tt class="docutils literal">config.inc.php</tt> en
+la sección <tt class="docutils literal">[database]</tt>, varía de unas decenas de megabytes para
 pequeñas revistas a cientos de megabytes para grandes revistas o
 colecciones.</li>
 <li>OJS contiene librerías open source de terceros, entre ellas:<ul>
@@ -714,7 +714,7 @@ colecciones.</li>
 <h3><a class="toc-backref" href="#id52">5.1.3&nbsp;&nbsp;&nbsp;El Proceso de Instalación</a></h3>
 <p>Existe varios pasos a llevar a cabo para una instalación exitosa de OJS:
 descargar y descomprimir los archivos de OJS en un directorio accesible vía
-web en su servidor, crear un directorio separado <em>files/</em> que no sea
+web en su servidor, crear un directorio separado <tt class="docutils literal">files/</tt> que no sea
 accesible vía web y lo más probable creación de la base de datos con algún
 usuario para acceder a la misma.</p>
 <ul>
@@ -744,7 +744,7 @@ sería posible acceder en línea a archivos privados. Para evitar esto, debe
 crear el directorio fuera de <tt class="docutils literal">/var/www/</tt>.</p>
 <p>Luego necesitará otorgar los permisos necesarios al directorio <tt class="docutils literal">files/</tt>, a
 los subdirectorios <tt class="docutils literal">public/</tt> y <tt class="docutils literal">cache/</tt> de la ruta de instalación de OJS
-y el archivo de configuración <tt class="docutils literal">config.ini.php</tt> para que el servidor web
+y el archivo de configuración <tt class="docutils literal">config.inc.php</tt> para que el servidor web
 pueda administrar/guardar correctamente los datos que vaya recibiendo.</p>
 <p>En la página de instalación recibirá una advertencia si los permisos no están
 debidamente configurados.</p>
@@ -778,6 +778,61 @@ Bye
 <p>En este ejemplo, la base de datos se llama <tt class="docutils literal">ojs</tt>, el usuario de la base se
 llama <tt class="docutils literal">pkpuser</tt> y la contraseña es <tt class="docutils literal">password</tt>. Se necesitarán estas tres
 piezas de información mas adelante.</p>
+</li>
+<li><p class="first">Completar la instalación vía web</p>
+<p>Con el navegador de internet, diríjase al directorio de instalación de OJS en
+su servidor. Verá una página de instalación: llene todos los campos del
+formulario (incluyendo la información de conexión a la base de datos que
+estableció previamente, y en Configuraciones de Archivo llene con la ruta al
+directorio <tt class="docutils literal">files</tt> que creó en pasos anteriores) y haga click sobre el
+botón <strong>Instalar</strong> en la parte de abajo de la página.</p>
+<p>Debe configurar la configuración de localización: aparte de la localización
+del idioma, deberá elegir el juego de caracteres que se utilizará. Si fuera
+posible, debe elegir &quot;Unicode (UTF-8)&quot;, lo cual asegurará un mejor soporte
+multilingüe en el sitio.</p>
+<p>(imagen Locale Settings)</p>
+<p>Luego debe especificar la ubicación del directorio <tt class="docutils literal">files/</tt> que creó
+previamente:</p>
+<p>(imagen file settings)</p>
+<p>Seguidamente, elija las configuraciones de seguridad. Esta configuración
+especifica cómo son almacenadas las contraseñas del sistema. SHA1 es más
+segura que MD5, por lo tanto, si su versión de PHP es 4.3.0 o superior, elija
+la opción SHA1.</p>
+<p>(imagen security settings)</p>
+<p>Debe especificar un nombre de usuario, contraseña y correo electrónico para
+la Cuenta del Administrador. Luego de una instalación exitosa, utilizará esta
+cuenta para iniciar sesión y configurar inicialmentenuevas revistas, pero
+normalmente esta cuenta no será utilizada para el trabajo diario con una
+revista.</p>
+<p>(imagen admin account)</p>
+<p>El paso siguiente es referente a la configuración de la base de datos. Debe
+completar la configuración apropiadamente: elija el controlador correcto
+que utilizará con el sistema, especifique correctamente el host (normalmente
+será <tt class="docutils literal">localhost</tt>, pero esto depende de la configuración del servidor),
+complete el nombre de usuario y la contraseña para la base de datos y el
+nombre de la base de datos a la que el sistema se conectará. Si todavía no ha
+creado la base de datos, entonces asegurese de que la casilla de selección
+&quot;Crear nueva base de datos&quot; se encuentre seleccionada; aunque esta opción no
+funcionará si el usuario de la base de datos no tiene los permisos necesarios
+para crear bases de datos. Si este fuese el caso, deberá crear la base de
+datos de antemano.</p>
+<p>(imagen databse settings)</p>
+<p>Por último, elija un identificador apropiado para el repositorio OAI (el
+nombre por defecto podría ser adecuado) y haga click en <strong>Instalar Open
+Journal Systems</strong> si el usuario de la base de datos tiene permisos de
+escritura en la base de datos, o bien haga click en <strong>Instalación Manual</strong> si
+necesita cargar la base de datos manualmente.</p>
+<p>(imagen miscellaneous settings)</p>
+<p>Si todo va bien, entonces verá una pantalla de instalación exitosa.</p>
+<p>(imagen instalación exitosa)</p>
+<p>Si el servidor no pudo escribir en el archivo <tt class="docutils literal">config.inc.php</tt>, se le
+solicitará que copie el contenido de un cuadro de texto y lo pegue en su
+archivo de configuración <tt class="docutils literal">config.inc.php</tt> por defecto del servidor.</p>
+<p>(imagen copy config.inc.php)</p>
+<p>Si elijió realizar una instalación manual, se le solicitará que copie una
+serie de sentencias SQL que deberán ser ejecutadas en su servidor de base de
+datos.</p>
+<p>(imagen manual installation)</p>
 </li>
 </ul>
 </div>

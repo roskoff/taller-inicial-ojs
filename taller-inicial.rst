@@ -76,13 +76,13 @@ Revista en cualquier instalación por defecto del sistema OJS.
 
     (explicar brevemente cada uno de los enlaces)
 
-  * Rastro de navegación
+  * Traza de navegación
 
-    Directamente bajo la barra de navegación superior encontrará un rastro de
+    Directamente bajo la barra de navegación superior encontrará una traza de
     la navegación actual con una serie de enlaces, uno por la página inicial
     del sitio, y uno por cada sub-página a la que haya navegado, terminando en
-    la página en la que se encuentra cuyo enlace se encuentra resaltado en
-    negrita. Cada enlace lo llevará de vuelta a esa sub-página específica.
+    la página en la que se encuentra (cuyo enlace se encuentra resaltado en
+    negrita). Cada enlace lo llevará de vuelta a esa sub-página específica.
 
     (imagen breadcrumb)
 
@@ -283,12 +283,12 @@ además de ser útil en general.
 Componentes de una Instalación
 ..............................
 * Ruta de instalación que contiene el OJS (típicamente 10-20Mb)
-* El tamaño de la ruta de los archivos (configurado en *config.inc.php* 
-  utilizando la directiva *files_dir*, varía dependiendo de los documentos
+* El tamaño de la ruta de los archivos (configurado en ``config.inc.php`` 
+  utilizando la directiva ``files_dir``, varía dependiendo de los documentos
   que están siendo gestionados (por ejemplo: el formato de los archivos,
   la complejidad del diseño, cantidad de rondas de revisión, etc.)
-* El tamaño de la base de datos MySQL (configurado en *config.inc.php* en
-  la sección *[database]*, varía de unas decenas de megabytes para
+* El tamaño de la base de datos MySQL (configurado en ``config.inc.php`` en
+  la sección ``[database]``, varía de unas decenas de megabytes para
   pequeñas revistas a cientos de megabytes para grandes revistas o 
   colecciones.
 * OJS contiene librerías open source de terceros, entre ellas:
@@ -301,7 +301,7 @@ El Proceso de Instalación
 .........................
 Existe varios pasos a llevar a cabo para una instalación exitosa de OJS:
 descargar y descomprimir los archivos de OJS en un directorio accesible vía
-web en su servidor, crear un directorio separado *files/* que no sea 
+web en su servidor, crear un directorio separado ``files/`` que no sea 
 accesible vía web y lo más probable creación de la base de datos con algún
 usuario para acceder a la misma.
 
@@ -338,7 +338,7 @@ usuario para acceder a la misma.
 
   Luego necesitará otorgar los permisos necesarios al directorio ``files/``, a
   los subdirectorios ``public/`` y ``cache/`` de la ruta de instalación de OJS
-  y el archivo de configuración ``config.ini.php`` para que el servidor web 
+  y el archivo de configuración ``config.inc.php`` para que el servidor web 
   pueda administrar/guardar correctamente los datos que vaya recibiendo.
 
   En la página de instalación recibirá una advertencia si los permisos no están
@@ -377,6 +377,83 @@ usuario para acceder a la misma.
   En este ejemplo, la base de datos se llama ``ojs``, el usuario de la base se
   llama ``pkpuser`` y la contraseña es ``password``. Se necesitarán estas tres
   piezas de información mas adelante.
+
+* Completar la instalación vía web  
+
+  Con el navegador de internet, diríjase al directorio de instalación de OJS en
+  su servidor. Verá una página de instalación: llene todos los campos del 
+  formulario (incluyendo la información de conexión a la base de datos que 
+  estableció previamente, y en Configuraciones de Archivo llene con la ruta al
+  directorio ``files`` que creó en pasos anteriores) y haga click sobre el 
+  botón **Instalar** en la parte de abajo de la página.
+
+  Debe configurar la configuración de localización: aparte de la localización
+  del idioma, deberá elegir el juego de caracteres que se utilizará. Si fuera
+  posible, debe elegir "Unicode (UTF-8)", lo cual asegurará un mejor soporte
+  multilingüe en el sitio.
+
+  (imagen Locale Settings)
+
+  Luego debe especificar la ubicación del directorio ``files/`` que creó 
+  previamente:
+
+  (imagen file settings)
+
+  Seguidamente, elija las configuraciones de seguridad. Esta configuración
+  especifica cómo son almacenadas las contraseñas del sistema. SHA1 es más
+  segura que MD5, por lo tanto, si su versión de PHP es 4.3.0 o superior, elija
+  la opción SHA1.
+
+  (imagen security settings)
+
+  Debe especificar un nombre de usuario, contraseña y correo electrónico para 
+  la Cuenta del Administrador. Luego de una instalación exitosa, utilizará esta
+  cuenta para iniciar sesión y configurar inicialmentenuevas revistas, pero
+  normalmente esta cuenta no será utilizada para el trabajo diario con una 
+  revista.  
+
+  (imagen admin account)
+
+  El paso siguiente es referente a la configuración de la base de datos. Debe
+  completar la configuración apropiadamente: elija el controlador correcto
+  que utilizará con el sistema, especifique correctamente el host (normalmente
+  será ``localhost``, pero esto depende de la configuración del servidor),
+  complete el nombre de usuario y la contraseña para la base de datos y el
+  nombre de la base de datos a la que el sistema se conectará. Si todavía no ha
+  creado la base de datos, entonces asegurese de que la casilla de selección
+  "Crear nueva base de datos" se encuentre seleccionada; aunque esta opción no
+  funcionará si el usuario de la base de datos no tiene los permisos necesarios
+  para crear bases de datos. Si este fuese el caso, deberá crear la base de
+  datos de antemano.
+
+  (imagen databse settings)
+
+  Por último, elija un identificador apropiado para el repositorio OAI (el
+  nombre por defecto podría ser adecuado) y haga click en **Instalar Open
+  Journal Systems** si el usuario de la base de datos tiene permisos de
+  escritura en la base de datos, o bien haga click en **Instalación Manual** si
+  necesita cargar la base de datos manualmente.
+
+  (imagen miscellaneous settings)
+
+  Si todo va bien, entonces verá una pantalla de instalación exitosa.
+
+  (imagen instalación exitosa)
+
+  Si el servidor no pudo escribir en el archivo ``config.inc.php``, se le
+  solicitará que copie el contenido de un cuadro de texto y lo pegue en su
+  archivo de configuración ``config.inc.php`` por defecto del servidor.
+
+  (imagen copy config.inc.php)
+
+  Si elijió realizar una instalación manual, se le solicitará que copie una
+  serie de sentencias SQL que deberán ser ejecutadas en su servidor de base de
+  datos.
+
+  (imagen manual installation)
+
+
+
 
 Copias de Respaldo y Restauración
 ---------------------------------
