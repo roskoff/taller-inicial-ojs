@@ -339,14 +339,94 @@ Roles disponibles en OJS
   Para más detalles puede ver la sección `Correctoras/es de Pruebas`_.
 
 Registrarse en una Revista
-............................
+..........................
 
-Viendo y Cambiando su Perfil
-............................
+Los visitantes de la revista que no estén registrados normalmente pueden
+registrarse a sí mismos como Lectores/as, Autoras/es y/o Revisoras/es. Las/os 
+Administradoras/es de Revista pueden remover esta opción de registro (en tal
+caso, aparecerá una notificación estableciendo que el registro se encuentra 
+cerrado), pero siempre pueden registrar usuarios desde la página principal de
+Gestión de la Revista en cualquier momento para cualquier rol.
 
-Reseteando su Contraseña
+Para registrarse en una revista, haga click en el enlace **Registro** en la
+barra superior de navegación, si se le solicita, elija la revista a la cual 
+quiere registrarse, y proceda a llenar el formulario en pantalla. No será capáz
+de registrarse con un rol de Editorial (Editoras/es, Editoras/es de Sección,
+Correctoras/es, Editoras/es de Maquetación, Correctoras/es de Prueba, 
+Administradoras/es de Subscripción o Administradas/es de Revista). Si necesita
+ser registrado con este nivel de roles, solicítelo al Editor/a de la Revista o
+al Administrador/a del Sitio.
+
+Todos los campos con un asterisco al lado (Usuario, Contraseña, Repetir
+Contraseña, Nombre, Apellido, Correo Electrónico) son obligatorios. Si la 
+revista es multilingüe, necesitará elegir su idioma preferido.
+
+(imagen filling out registration form)
+
+Su nombre de usuario y correo electrónico deben ser únicos, además, a pesar de
+poder cambiar luego su dirección de correo electrónico, no será posible cambiar
+su nombre de usuario.
+
+Puede registrarse como Lector/a, Autor/a y/o Revisor/a, dependiendo de cómo ha
+sido configurada la revista. Todo lo que debe hacer es marcar la casilla de
+selección de los roles que estén habilitados. Si se registra como Revisor/a
+también podrá proveer los intereses que tiene en cuanto a revisiones.
+
+(imagen selecting roles)
+
+En algunos casos, la revista en la que esté intentando registrarse tal vez no
+permita realizar registros, si ese fuera el caso verá una nota indicando esto.
+
+Si quiere registrarse con otro rol en la misma revista (por ejemplo, si ya es
+un/a Lector/a, pero también quiere ser un/a Autor/a) puede iniciar sesión, ir
+a **Editar Mi Perfil** (en Mi Cuenta en su página de Área Personal) y elegir 
+las casillas de selección de los roles, hacia la parte inferior de la página.
+
+Si quiere revocar su registro completamente de la revista, todo lo que debe 
+hacer es visitar su perfil y desmarcar todas las casillas de selección de los
+roles. Si está registrado con un rol de nivel editorial, tendrá que solicitarlo
+al Administrador/a de la Revista.
+
+Ver y Cambiar su Perfil
+.......................
+
+Para ver y editar su perfil, inicie sesión y haga click en el enlace **Editar Mi
+Perfil** de la página de Área Personal. Alternativamente, una vez que haya
+iniciado sessión, también puede hacer click en el enlace **Mi Perfil** del
+bloque de Navegación de Usuario en la barra lateral si estuviera disponible. En
+esta página puede actualizar su dirección de correo electrónico, su información
+personal o cambiar su contraseña.
+
+Cambiar su Contraseña
 ........................
 
+El proceso de cambio de contraseña es simple si la recuerda y sólo desea
+cambiarla por otra nueva: inicie sesión, y desde su página de Área Personal
+haga click en el enlace **Cambiar Contraseña**. Necesitará ingresar su
+contraseña actual y luego la nueva contraseña dos veces.
+
+Si ha olvidado su contraseña, el cambio también es un proceso simple, pero
+lleva unos cuantos pasos más:
+
+1. Haga click en el enlace **Login** en la barra de navegación superior.
+#. Haga click en el enlace **Olvidó su contraseña?**.
+#. Ingrese su dirección de correo en el cuadro de texto mostrado y haga click
+   en el enlace **Cambiar Contraseña**. Esto hará que se envíe un correo 
+   electrónico de confirmación a su dirección de correo electrónico (si no ve
+   un correo electrónico en su Bandeja de Entrada, revise su carpeta de correo
+   basura).
+#. El correo electrónico incluirá un enlace para cambiar su contraseña: haga
+   click en él y debería retornar al sitio web de la revista.
+#. Al retornar al sitio web de la revista, debería ser notificado que otro
+   correo electrónico que contiene una nueva contraseña ha sido enviado a su
+   dirección de correo electrónico. Revise este segundo correo y utilice las
+   credenciales para iniciar sesión en el sitio.
+#. Luego de un inicio de sesión exitoso, se le solicitará inmediatamente que
+   cambie la contraseña. Ingrese primero la contraseña recibida por correo (que
+   en este momento es su contraseña actual), y luego ingrese una nueva 
+   contraseña secreta dos veces (Nueva Contraseña, Repita Nueva Contraseña).
+
+(imagen cambiar contraseña)
 
 Configuraciones y Gestión para una revista
 ==========================================
