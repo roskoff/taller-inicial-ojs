@@ -245,20 +245,98 @@ Roles disponibles en OJS
 
 * Editoras/es
 
+  Las/os Editoras/es vigila el proceso completo de revisión, edición y
+  publicación. Trabajando en conjunto con el o la Administrador/a de Revista,
+  por lo general establece las políticas y procedimientos para la revista. En
+  el proceso de edición, las/os editoras/es asignan los envíos a las/os
+  Editoras/es de Sección para que pasen por la Revisión de Envíos y la Edición
+  de Envíos. Las/os Editoras/es prestan atención al progreso del envío y asiste
+  con cualquier dificultad que surja. Una vez que la revisión se completó, el o
+  la editor/a por lo general sigue el envío a través del proceso de edición
+  (incluída la corrección, la maquetación y la corrección de pruebas) 
+  aunque en algunas revistas ésta sigue siendo la responsabilidad de
+  las/os editoras/es de sección a cargo del proceso de revisión del envío.
+  El o La Editor/a también crea las ediciones de una revista, agenda los envíos
+  para su publicación, organiza la Tabla de Contenidos y publica la edición
+  como parte del Proceso de Publicación. El o La Editor/a puede restaurar al
+  estado activo un envío archivado en las listas En Revisión o En Edición.
+
+  Para más detalles puede ver la sección `Editoras/es`_.
+
 * Editoras/es de Sección
+
+  Las/os Editoras/es de Sección gestionan la revisión y edición de los envíos
+  que les fueron asignados. En algunos casos el o la Editor/a de Sección que 
+  fue asignado a seguir envíos a través del Proceso de Revisión también será
+  responsable de seguir aquellos envíos que fueron aceptados a través del 
+  Proceso de Edición (esto es, a través del la corrección, la maquetación y
+  corrección de pruebas). A menudo, sin embargo, las/os Editoras/es de Sección
+  sólo trabajan con el Proceso de Revisión, y un/a Editor/a, actuando con el
+  rol de Editor/a de Sección, sigue los envíos a través del Proceso de Edición.
+  La revista tendrá una política que definirá cómo estarán divididas estas
+  tareas.
+
+  Para más detalles puede ver la sección `Editoras/es de Sección`_.
 
 * Revisoras/es
 
-* Gestión de Subscripción
+  Un/a Revisor/a es seleccionado/a por un/a Editor/a de Sección para revisar
+  un envío. A las/os Revisoras/es se les solicita que envíen sus revisiones al
+  sitio web de la revista (aunque algunas revistas optan por una política de
+  revisión vía correo electrónico) y tienen permitido subir adjuntos para el
+  uso de las/os Editoras/es y Autoras/es. Las/os Revisoras/es tienen la
+  posibilidad de ser valorados por las/os Editoras/es de Sección, dependiendo
+  de las políticas de la revista.
+
+  Para más detalles puede ver la sección `Revisoras/es`_.
+
+* Adminsitradoras/es de Subscripción
+
+  El o La Adminstrador/a de Subscripción gestiona las subscripciones y los
+  tipos de subscripción de una revista, y también puede configurar cuándo y
+  cómo los pagos son manejados dentro del sistema.
+
+  Para más detalles puede ver las secciones correspondientes a Subscripciones
+  y Pagos.
 
 * Correctoras/es
 
+  Las/os Correctores/as editan los envíos para mejorar la gramática y la
+  claridad, trabaja con las/os Autoras/es para asegurarse de que todo está
+  correcto, asegura la adherencia estricta a los estilos bibliográficos y 
+  textuales de la revista, y produce una copia en limpio y editada para
+  el o la Editor/a de Maquetación para transformarlo en la galera que será
+  publicada en el formato de la revista. Algunas revistas tienen a Editores/as
+  o Editoras/es de Sección que se encargan de este rol.
+
+  Para más detalles puede ver la sección `Correctoras/es`_.
+
 * Editoras/es de Maquetación
+
+  El o la Editor/a de Maquetación transforma las versiones corregidas de un
+  envío en galeras en formatos HTML, PDF, PS, etc. - tipos de archivos que la
+  revista eligió para usar en la publicación electrónica. Este sistema no 
+  provee un módulo para convertir los documentos recibidos formatos de galera,
+  por lo que el o la Editor/a de Maquetación debería tener acceso y ser capáz
+  de utilizar aplicaciones externas para crear las galeras en estos formatos 
+  y presentar los artículos en pantalla en una disposición correctamente 
+  formateada y legible, a la manera de una revista académica y prestando 
+  atención a este nuevo medio de publicación (para darse una idea puede 
+  consultar con la disposición que utilizan otras revistas en línea, por
+  ejemplo `Highwire Press <http://highwire.stanford.edu/>`_)
+  
+  Para más detalles puede ver la sección `Editoras/es de Maquetación`_.
 
 * Correctoras/es de Prueba
 
+  Las/os Correctoras/es de Prueba leen cuidadosamente sobre la galera en los
+  formatos en los que la revista publica (así también lo hace el o la
+  autor/a). El o La Corrector/a de Prueba (y el o la Autor/a) anota cualquier
+  error tipográfico y de formato para que el o la Editor/a de Maquetación lo
+  corrija. En el caso de algunas revistas un/a Editor/a o Editor/a de Sección
+  también será un Corrector/a de Prueba.
 
-
+  Para más detalles puede ver la sección `Correctoras/es de Pruebas`_.
 
 Registrarse en una Revista
 ............................
