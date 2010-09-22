@@ -496,9 +496,65 @@ Editoras/es de Maquetación
 --------------------------
 Correctoras/es de Pruebas
 -------------------------
+Las/os Correctoras/es de Pruebas recibirán un correo electrónico del Editor/a
+de Código solicitando que el o la Corrector/a de Pruebas complete una o varias
+rondas de corrección de prueba. Es ese momento es cuando un/a corrector/a de
+prueba decide aceptar o rechazar la responsabilidad. Si acepta la tarea, el o
+la corrector/a de prueba puede iniciar sesión e iniciar el proceso de
+corrección de prueba desde su **Área Personal**.
+
+
+
+
 Lectoras/es
 -----------
+Las/los Lectoras/es son aquelos subscriptos a una revista basada en
+subscripciones, junto con aquellos lectores que eligieron registrarse en
+revistas de acceso libre (ya sea de acceso libre inmediato o luego de un
+perido de tiempo luego de la publicación inicial del contenido de la revista).
 
+Las/los Lectoras/os registrados reciben una notificación de la publicación de
+cada edición, la cual incluye la Tabla de Contenidos de la Revista.
+
+* Acceder al contenido
+
+  Para revistas de acceso libre que utilizan OJS, el acceder al contenido es
+  tan simple como hacer click sobre el enlace **Actual** para ver la última
+  edición, o también puede acceder al enclace **Archivo** para ver ediciones
+  previas.
+
+  (imagen current issue)
+
+* Suscribirse
+  
+  Si se requiere una subscripción para acceder al contenido de la revista,
+  primero necesitará registarse como Lector/a en la revista OJS. Para más
+  detalles puede ver la sección Pagos y Subscripciones.
+
+* Inscripción a Notificaciones
+  Si le gustaría recibir un correo electrónico automático que lo alerte sobre
+  nuevo contenido de una revista OJS, a menudo puede registarse en una cuenta
+  con rol de Lector/a y marcar la casilla de selección:
+
+  (imagen reader notification)
+
+* Herramientas de Lectura
+  
+  Las Herramientas de Lectura están hechas para asistir tanto a lectoras/es
+  expertas/os o novatas/os de la revista. Esta asistencia se utiliza de manera
+  a construir un contexto para interpretar, evaluar y utilizar la investigación
+  que están leyendo.
+
+  Las Herramientas de Lectura han sido desarrolladas para un amplio rango de
+  disciplinas académicas, de las cuales el Administrador de la Revista puede
+  seleccionar, así como actualizarlas y editarlas, de manera a dar soporte al
+  entorno de lectura para la revista. Las Herramientas de Lectura también
+  permiten a las/os lectoras/es a unirse a foros de discusión relevantes, así
+  como también permiten contactar con el autor o compartir el artículo con 
+  otro/a lector/a, entre muchas cosas más.
+
+  (imagen reading tool)
+  
 Administración del Sistema
 ==========================
 Las siguientes instrucciones demostrarán cómo instalar OJS, cómo hacer
