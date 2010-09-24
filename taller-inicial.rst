@@ -428,8 +428,8 @@ lleva unos cuantos pasos más:
 
 (imagen cambiar contraseña)
 
-Configuraciones y Gestión para una revista
-==========================================
+Configuraciones y Gestión de Revista
+====================================
 Resumen
 -------
 Gestión de Sitio
@@ -633,7 +633,10 @@ usuario para acceder a la misma.
   que con el navegador puede ir a http://ejemplo.com/ojs/ y podrá ver la
   pantalla de instalación.
 
-  (imagen pantalla instalación)
+.. figure:: images/instalacion-01.png
+   :align: center
+
+   Pantalla de Instalación de OJS
 
 * Preparar el entorno para la instalación
 
@@ -644,13 +647,16 @@ usuario para acceder a la misma.
 
   Luego necesitará otorgar los permisos necesarios al directorio ``files/``, a
   los subdirectorios ``public/`` y ``cache/`` de la ruta de instalación de OJS
-  y el archivo de configuración ``config.inc.php`` para que el servidor web 
+  y al archivo de configuración ``config.inc.php`` para que el servidor web 
   pueda administrar/guardar correctamente los datos que vaya recibiendo.
 
   En la página de instalación recibirá una advertencia si los permisos no están
   debidamente configurados.
 
-  (imagen permisos insuficientes)
+.. figure:: images/instalacion-permisos-pre-instalacion.png
+   :align: center
+
+   Instalación de OJS: Permisos insuficientes
 
 * Configurar la base de datos
 
@@ -698,27 +704,43 @@ usuario para acceder a la misma.
   posible, debe elegir "Unicode (UTF-8)", lo cual asegurará un mejor soporte
   multilingüe en el sitio.
 
-  (imagen Locale Settings)
+.. figure:: images/instalacion-configuracion-locales.png
+   :align: center
+
+   Instalación de OJS: Configuración de locales
+..
 
   Luego debe especificar la ubicación del directorio ``files/`` que creó 
   previamente:
 
-  (imagen file settings)
+.. figure:: images/instalacion-configuracion-files.png
+   :align: center
+
+   Instalación de OJS: Configuración de ficheros
+..
 
   Seguidamente, elija las configuraciones de seguridad. Esta configuración
   especifica cómo son almacenadas las contraseñas del sistema. SHA1 es más
   segura que MD5, por lo tanto, si su versión de PHP es 4.3.0 o superior, elija
   la opción SHA1.
 
-  (imagen security settings)
+.. figure:: images/instalacion-configuracion-seguridad.png
+   :align: center
+
+   Instalación de OJS: Configuración de seguridad
+..
 
   Debe especificar un nombre de usuario, contraseña y correo electrónico para 
   la Cuenta del Administrador. Luego de una instalación exitosa, utilizará esta
-  cuenta para iniciar sesión y configurar inicialmentenuevas revistas, pero
+  cuenta para iniciar sesión y configurar inicialmente nuevas revistas, pero
   normalmente esta cuenta no será utilizada para el trabajo diario con una 
   revista.  
 
-  (imagen admin account)
+.. figure:: images/instalacion-configuracion-cuenta-admin.png
+   :align: center
+
+   Instalación de OJS: Configuración de administrador/a
+..
 
   El paso siguiente es referente a la configuración de la base de datos. Debe
   completar la configuración apropiadamente: elija el controlador correcto
@@ -726,13 +748,17 @@ usuario para acceder a la misma.
   será ``localhost``, pero esto depende de la configuración del servidor),
   complete el nombre de usuario y la contraseña para la base de datos y el
   nombre de la base de datos a la que el sistema se conectará. Si todavía no ha
-  creado la base de datos, entonces asegurese de que la casilla de selección
+  creado la base de datos, entonces asegúrese de que la casilla de selección
   "Crear nueva base de datos" se encuentre seleccionada; aunque esta opción no
   funcionará si el usuario de la base de datos no tiene los permisos necesarios
   para crear bases de datos. Si este fuese el caso, deberá crear la base de
   datos de antemano.
 
-  (imagen databse settings)
+.. figure:: images/instalacion-configuracion-bd.png
+   :align: center
+
+   Instalación de OJS: Configuración de la base de datos
+..
 
   Por último, elija un identificador apropiado para el repositorio OAI (el
   nombre por defecto podría ser adecuado) y haga click en **Instalar Open
@@ -740,23 +766,39 @@ usuario para acceder a la misma.
   escritura en la base de datos, o bien haga click en **Instalación Manual** si
   necesita cargar la base de datos manualmente.
 
-  (imagen miscellaneous settings)
+.. figure:: images/instalacion-configuracion-adicional.png
+   :align: center
+
+   Instalación de OJS: Configuración adicional
+..
 
   Si todo va bien, entonces verá una pantalla de instalación exitosa.
 
-  (imagen instalación exitosa)
+.. figure:: images/instalacion-exitosa.png
+   :align: center
+
+   Instalación de OJS: Instalación exitosa
+..
 
   Si el servidor no pudo escribir en el archivo ``config.inc.php``, se le
   solicitará que copie el contenido de un cuadro de texto y lo pegue en su
   archivo de configuración ``config.inc.php`` por defecto del servidor.
 
-  (imagen copy config.inc.php)
+.. figure:: images/instalacion-copiar-configuracion-manualmente.png
+   :align: center
+
+   Instalación de OJS: Copiar archivo de configuración config.ini.php
+..
 
   Si elijió realizar una instalación manual, se le solicitará que copie una
   serie de sentencias SQL que deberán ser ejecutadas en su servidor de base de
   datos.
 
-  (imagen manual installation)
+.. figure:: images/instalacion-bd-manual.png
+   :align: center
+
+   Instalación de OJS: Instalación manual
+..
 
 Copias de Respaldo y Restauración
 ---------------------------------
