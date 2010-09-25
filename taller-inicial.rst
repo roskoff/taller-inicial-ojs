@@ -432,6 +432,23 @@ Configuraciones y Gestión de Revista
 ====================================
 Resumen
 -------
+
+Como parte de la `Instalación`_, habrá creado una cuenta de Administrador del
+Sitio. Cuando inicia sesión en OJS con esa cuenta, tendrá acceso a las
+configuraciones de Administración del Sitio en su página de Área Personal.
+Podrá crear nuevas revistas, gestionar el soporte de idiomas en el sistema y
+llevar a cabo otras tareas administrativas.
+
+Para acceder a las páginas de Administración del Sitio, inicie sesión como
+Administrador del Sitio y desde su página de Área Personal haga click en el
+enlace **Administrador/a**.
+
+.. figure:: images/sec03-area-personal-admin.png
+   :align: center
+
+   Área Personal del/la Administrador/a
+..
+
 Gestión de Sitio
 ----------------
 Configuraciones del Sitio
